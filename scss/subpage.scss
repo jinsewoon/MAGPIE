@@ -1,0 +1,40 @@
+//서브페이지
+body.subpage{
+  main{
+    .container{
+      // display: flex;
+      width: 1200px;
+      margin: 50px auto;
+      //sub page title 영역
+      .sub_title{
+        span{
+          position: relative;
+          display: inline-block;
+          padding-bottom: 8px;
+          line-height: 43px;
+          &:after{
+            content: '';
+            position: absolute;
+            height: 3px;
+            background: $borderColorPrimary;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+      //page content 영역
+      .inner{
+        .box{
+          flex-wrap: wrap;
+          .items{
+            padding: 50px 0;
+          }
+        }
+      }
+    }
+    .container100vw{
+      width: 100%;
+    }
+  }
+}

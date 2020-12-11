@@ -1,0 +1,141 @@
+///layout 공통
+// #wrap{
+//   width: 1350px;
+//   margin: 0 auto;
+  #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    height: 160px;
+    background: #171717;
+    #top_logo{
+        img{
+          display: block;
+          width: 100px;
+          height: 100px;
+        }
+    }
+    //top menu 구현
+    #top_nav{
+      position: relative;
+      ul{
+        display: flex;
+        align-items: center;
+        li{
+          position: relative;
+          margin: 0 30px;
+          a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 100px;
+            font-size: $fontSizeBig;
+          }
+          &:hover{
+            .sub_menu{
+              visibility: visible;
+              top: 100%;
+              opacity: 1;
+            }
+          }
+          //submenu 구현
+          .sub_menu{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            border: 1px solid $borderColorPrimary;
+            visibility: hidden;
+            top: calc( 100% - 3px );
+            opacity: 0;
+            transition: .5s;
+            z-index: 500;
+            li{
+              width: 100%;
+              margin: 0;
+              background: white;
+              box-sizing: border-box;
+              padding: 0 10px;
+              width: 100%;
+              min-width: 150px;
+              transition: .5s;
+              a{
+                line-height: 40px;
+                height: 40px;
+                color:#000000;
+              }
+              &:hover{
+                background: $gbtnColor;
+                a{
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //footer 영역
+  #footer{
+    background: #000000;
+    .footer_inner{
+      width: 1200px;
+      margin: 0 auto;
+      .siteMap{
+        padding: 30px 0;
+        ul{
+          display: flex;
+          justify-content: center;
+          li{
+            margin: 0 10px;
+            font-weight: bold;
+            a{
+              color:#666666;
+            }
+            & a:hover{
+              color:#f1f1f1;
+              transition: 1s;
+            }
+          }
+        }
+      }
+      .footer_infoBox{
+        color:#8e8e8e;
+        text-align: center;
+        p{
+          margin: 0;
+          font-size: 14px;
+          line-height: 22px;
+          a{
+            color:#f1f1f1;
+            text-decoration: underline;
+          }
+        }
+      }
+      .policyBox{
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        a{
+          position: relative;
+          font-size: 14px;
+          color:#f1f1f1;
+          margin: 0 10px;
+          text-decoration: underline;
+          &:first-child:after{
+            content: '';
+            position: absolute;
+            top:50%;
+            right: -10px;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 15px;
+            background: #ffffff;
+          }
+        }
+      }
+    }
+  }
+// }
