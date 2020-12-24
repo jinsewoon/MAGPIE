@@ -28,46 +28,49 @@ a:hover {
 }
 
 .location_box {
-  width: 100vw;
-  height: 100vh;
   position: relative;
-  background-image: url("../img/Magpie+Itaewon.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .location_box img {
   display: block;
-  width: 100vw;
+  width: 100%;
 }
 
 .location_box .locationTextBox {
   display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  color: #ffffff;
+  background: #000000;
 }
 
-.location_box .locationTextBox .locationText {
+.location_box .locationTextBox .top_img {
+  display: inline-block;
+  width: 25%;
+}
+
+.location_box .locationTextBox .locationTextWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.location_box .locationTextBox .locationTextWrap .locationText {
   width: 400px;
   text-align: center;
+  color: #ffffff;
   margin: 0 100px;
-  background: rgba(180, 180, 180, 0.7);
 }
 
-.location_box .locationTextBox .locationText .info {
+.location_box .locationTextBox .locationTextWrap .locationText .info {
   margin: 50px 0;
 }
 
-.location_box .locationTextBox .locationText .info h3 {
+.location_box .locationTextBox .locationTextWrap .locationText .info h3 {
   color: #ffffff;
 }
 
-.location_box .locationTextBox .locationText .info p {
+.location_box .locationTextBox .locationTextWrap .locationText .info p {
   color: #ffffff;
 }
 
@@ -92,10 +95,6 @@ a:hover {
   font-size: 32px;
 }
 
-.inner .box .items img {
-  width: 100%;
-}
-
 .inner .box .items .seasonList {
   margin: 50px 0;
 }
@@ -105,6 +104,8 @@ a:hover {
   width: 280px;
   height: 550px;
   margin: 20px 10px 50px 10px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
 }
 
 .inner .box .items .productList {
@@ -127,16 +128,18 @@ a:hover {
   width: 280px;
   height: 400px;
   margin: 20px 10px 50px 10px;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f3;
 }
 
 .inner .box .introTexItems {
   display: flex;
-  flex: 50%;
   background: #eaeaea;
 }
 
 .inner .box .introTexItems .introText {
   position: relative;
+  width: 50%;
   padding: 0 40px;
   font-size: 21px;
   line-height: 40px;
@@ -144,17 +147,24 @@ a:hover {
 
 .inner .box .introTexItems .introText img {
   position: absolute;
-  top: -15px;
-  left: 10px;
-  width: 15%;
+  top: 30px;
+  left: 67px;
+  width: 17%;
 }
 
 .inner .box .introTexItems .introText h3 {
-  font-size: 30px;
+  font-size: 21px;
   color: #ffffff;
   background: #000000;
   padding: 10px 0;
+  margin: 50px 30px 50px 50px;
   text-align: center;
+}
+
+.inner .box .introTexItems .introText p {
+  font-size: 16px;
+  padding: 0 30px;
+  text-shadow: 1px 1px #d6d6d6;
 }
 
 .inner .box .ci {
@@ -275,7 +285,7 @@ a:hover {
 
 .inner .box .classes .classInfo h2 {
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
   color: #ffffff;
   background: #000000;
   padding: 10px 0;
@@ -303,17 +313,26 @@ a:hover {
 }
 
 .inner .box .faqBox .q_box {
-  font-size: 21px;
+  font-size: 18px;
   line-height: 30px;
+  padding: 5px;
   color: #ffffff;
-  background: #000000;
+  background: #171717;
 }
 
 .inner .box .faqBox .q_box h3 {
-  padding: 5px 0 5px 10px;
+  padding: 5px 0 5px 20px;
 }
 
-.inner .box .faqBox .a_box a {
+.inner .box .faqBox .a_box {
+  padding: 0 50px;
+}
+
+.inner .box .faqBox .a_box p {
+  line-height: 2;
+}
+
+.inner .box .faqBox .a_box p a {
   color: #000000;
   font-weight: bolder;
   text-decoration: underline;
@@ -359,6 +378,8 @@ a:hover {
 table {
   width: 100%;
   table-layout: fixed;
+  font-size: 14px;
+  border-collapse: collapse;
   cursor: default;
 }
 
@@ -379,13 +400,45 @@ table tr th {
   text-transform: uppercase;
 }
 
+table tr th:nth-child(1) {
+  width: 5%;
+}
+
+table tr th:nth-child(3) {
+  width: 15%;
+}
+
+table tr th:nth-child(4) {
+  width: 10%;
+}
+
+table tr th:nth-child(5) {
+  width: 10%;
+}
+
 table tr td {
   padding: 15px;
   vertical-align: middle;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   color: #000000;
   border-bottom: 1px solid #666666;
+}
+
+table tr td:nth-child(1) {
+  width: 5%;
+}
+
+table tr td:nth-child(3) {
+  width: 15%;
+}
+
+table tr td:nth-child(4) {
+  width: 10%;
+}
+
+table tr td:nth-child(5) {
+  width: 10%;
 }
 
 .tbl_header {
@@ -396,10 +449,6 @@ table tr td {
 .tbl_content {
   margin-bottom: 50px;
   background-color: #eaeaea;
-}
-
-.tbl_content table tr:hover {
-  background-color: rgba(201, 199, 179, 0.8);
 }
 
 .tbl_content table tr:hover td {
@@ -590,5 +639,6 @@ body.subpage main .container .inner .box .items {
 }
 
 body.subpage main .container100vw {
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
 }

@@ -1,30 +1,30 @@
 //component
 
 .location_box{
-  width: 100vw;
-  height: 100vh;
   position: relative;
-  background-image: url('../img/Magpie+Itaewon.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   img{
     display: block;
-    width: 100vw;
+    width: 100%;
   }
   .locationTextBox{
     display: flex;
-    justify-content: center;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    .locationText{
+    color:#ffffff;
+    background: #000000;
+    .top_img{
+      display: inline-block;
+      width: 25%;
+    }
+    .locationTextWrap{
+      display: flex;
+      justify-content: center;
+      .locationText{
       width: 400px;
       text-align: center;
+      color:#ffffff;
       margin: 0 100px;
-      background: rgba(180,180,180,0.7);
       .info{
         margin: 50px 0;
         h3{
@@ -34,6 +34,7 @@
           color:$fontColorBasic;
         }
       }
+    }
     }
   }
 }
@@ -53,7 +54,7 @@
         font-size: $titleFontSizeBig;
       }
       img{
-        width: 100%;
+        // width: 100%;
       }
       .seasonList{
         margin: 50px 0;
@@ -62,6 +63,8 @@
           width: 280px;
           height: 550px;
           margin: 20px 10px 50px 10px;
+          box-sizing: border-box;
+          border: 1px solid #f3f3f3;
         }
       }
       .productList{
@@ -80,30 +83,38 @@
           width: 280px;
           height: 400px;
           margin: 20px 10px 50px 10px;
+          box-sizing: border-box;
+          border: 1px solid #f3f3f3;
         }
       }
     }
     .introTexItems{
       display: flex;
-      flex: 50%;
       background: #eaeaea;
       .introText{
         position: relative;
+        width: 50%;
         padding: 0 40px;
         font-size: $fontSizeBig;
         line-height: 40px;
         img{
           position: absolute;
-          top:-15px;
-          left:10px;
-          width: 15%;
+          top: 30px;
+          left: 67px;
+          width: 17%;
         }
         h3{
-          font-size: 30px;
+          font-size: 21px;
           color:#ffffff;;
           background: #000000;
           padding: 10px 0;
+          margin: 50px 30px 50px 50px;
           text-align: center;
+        }
+        p{
+          font-size: 16px;
+          padding: 0 30px;
+          text-shadow: 1px 1px #d6d6d6;
         }
       }
     }
@@ -197,7 +208,6 @@
 
           }
         }
-
       }
     }
     .classes{
@@ -212,7 +222,7 @@
         margin: 0 10%;
         h2{
           text-align: center;
-          font-size: $fontSizeBig;
+          font-size: $fontSizeMid;
           color:#ffffff;
           background: #000000;
           padding: 10px 0;
@@ -237,21 +247,28 @@
     .faqBox{
       cursor: default;
       margin-bottom: 50px;
-
       .q_box{
-        font-size: $fontSizeBig;
+        font-size: $fontSizeMid;
         line-height: 30px;
+        padding: 5px;
         color:#ffffff;;
-        background: #000000;
+        background: #171717;
         h3{
-          padding: 5px 0 5px 10px;
+          padding: 5px 0 5px 20px;
+          &:nth-child(2){
+            // font-size: 16px;
+          }
         }
       }
       .a_box{
-        a{
-          color: #000000;
-          font-weight: bolder;
-          text-decoration: underline;
+        padding: 0 50px;
+        p{
+          line-height: 2;
+          a{
+            color: #000000;
+            font-weight: bolder;
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -301,6 +318,8 @@
 table{
   width: 100%;
   table-layout: fixed;
+  font-size: 14px;
+  border-collapse: collapse;
   cursor: default;
   & + .gbtn{
     margin: 20px 0 50px;
@@ -315,19 +334,48 @@ table{
       font-size: $fontSizeNormal;
       color: #ffffff;
       text-transform: uppercase;
+      &:nth-child(1){
+        width: 5%;
+      }
+      &:nth-child(2){
+        // width: 5%;
+      }
+      &:nth-child(3){
+        width: 15%;
+      }
+      &:nth-child(4){
+        width: 10%;
+      }
+      &:nth-child(5){
+        width: 10%;
+      }
     }
     td{
       padding: 15px;
       // text-align: left;
       vertical-align: middle;
       font-weight: 300;
-      font-size: $fontSizeNormal;
+      font-size: 14px;
       color: $fontColorDark;
       border-bottom: 1px solid $borderColorPrimary;
 
+      &:nth-child(1){
+        width: 5%;
+      }
+      &:nth-child(2){
+        // width: 5%;
+      }
+      &:nth-child(3){
+        width: 15%;
+      }
+      &:nth-child(4){
+        width: 10%;
+      }
+      &:nth-child(5){
+        width: 10%;
+      }
     }
   }
-
 }
 
 .tbl_header{
@@ -340,7 +388,6 @@ table{
   background-color: #eaeaea;
   table{
     tr:hover{
-      background-color: rgba(201, 199, 179, 0.8);
       td{
         font-weight: 700;
       }
